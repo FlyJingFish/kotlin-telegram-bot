@@ -71,7 +71,7 @@ internal class ApiClient(
     private val apiUrl: String,
     private val botTimeout: Int = 30,
     logLevel: LogLevel,
-    proxy: Proxy = Proxy.NO_PROXY,
+    proxy: Proxy? = null,
     private val gson: Gson,
     private val multipartBodyFactory: MultipartBodyFactory = MultipartBodyFactory(GsonFactory.createForMultipartBodyFactory()),
     private val apiRequestSender: ApiRequestSender = ApiRequestSender(),
@@ -92,7 +92,11 @@ internal class ApiClient(
             .addInterceptor(logging)
             .also { builder -> httpClientInterceptors.forEach { builder.addInterceptor(it) } }
             .retryOnConnectionFailure(true)
-            .proxy(proxy)
+            .apply {
+                if (proxy != null){
+                    proxy(proxy)
+                }
+            }
             .build()
 
         val retrofit = Retrofit.Builder()

@@ -81,7 +81,7 @@ class Bot private constructor(
         var timeout: Int = 30
         var apiUrl: String = "https://api.telegram.org/"
         var logLevel: LogLevel = LogLevel.None
-        var proxy: Proxy = Proxy.NO_PROXY
+        var proxy: Proxy? = null
         var coroutineDispatcher: CoroutineDispatcher = Executors.newSingleThreadExecutor().asCoroutineDispatcher()
         var httpClientInterceptors: List<Interceptor> = emptyList()
         internal var dispatcherConfiguration: Dispatcher.() -> Unit = { }
