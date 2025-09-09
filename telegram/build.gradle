@@ -9,8 +9,8 @@ plugins {
     alias libs.plugins.kotlin.jvm
 }
 
-group 'com.github.kotlintelegrambot'
-version '6.2.0'
+group 'com.github.flyjingfish'
+version '6.4.0'
 
 repositories {
     mavenCentral()

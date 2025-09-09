@@ -11,7 +11,7 @@ plugins {
 allprojects {
     apply from: "$rootDir/ktlint.gradle"
 
-    group 'com.github.kotlintelegrambot'
+    group 'com.github.flyjingfish'
     version '0.3.4'
 
     repositories {
