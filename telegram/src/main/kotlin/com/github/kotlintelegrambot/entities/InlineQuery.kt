@@ -16,11 +16,11 @@ import com.google.gson.annotations.SerializedName
  * request was sent from a secret chat.
  */
 data class InlineQuery(
-    val id: String,
-    val from: User,
+    val id: String = "",
+    val from: User = User(),
     val location: Location? = null,
-    val query: String,
-    val offset: String,
+    val query: String = "",
+    val offset: String = "",
     @SerializedName("chat_type") val chatType: ChatType? = null,
 ) {
 

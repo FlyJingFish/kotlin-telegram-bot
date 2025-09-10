@@ -14,11 +14,11 @@ import com.github.kotlintelegrambot.entities.stickers.Sticker
 import com.google.gson.annotations.SerializedName as Name
 
 data class Message(
-    @Name("message_id") val messageId: Long,
+    @Name("message_id") val messageId: Long = 0,
     val from: User? = null,
     @Name("sender_chat") val senderChat: Chat? = null,
-    val date: Long,
-    val chat: Chat,
+    val date: Long = 0,
+    val chat: Chat = Chat(),
     @Name("forward_from") val forwardFrom: User? = null,
     @Name("forward_from_chat") val forwardFromChat: Chat? = null,
     @Name("forward_from_message_id") val forwardFromMessageId: Int? = null,

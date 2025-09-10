@@ -18,11 +18,11 @@ import java.math.BigInteger
  * @see OrderInfo
  */
 data class PreCheckoutQuery(
-    val id: String,
-    val from: User,
-    val currency: String,
-    @SerializedName("total_amount") val totalAmount: BigInteger,
-    @SerializedName("invoice_payload") val invoicePayload: String,
-    @SerializedName("shipping_option_id") val shippingOptionId: String?,
-    @SerializedName("order_info") val orderInfo: OrderInfo?,
+    val id: String = "",
+    val from: User =User(),
+    val currency: String = "",
+    @SerializedName("total_amount") val totalAmount: BigInteger = BigInteger.valueOf(0L),
+    @SerializedName("invoice_payload") val invoicePayload: String = "",
+    @SerializedName("shipping_option_id") val shippingOptionId: String?=null,
+    @SerializedName("order_info") val orderInfo: OrderInfo?=OrderInfo(),
 )

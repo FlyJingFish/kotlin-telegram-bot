@@ -8,8 +8,8 @@ import com.google.gson.annotations.SerializedName
  * https://core.telegram.org/bots/api#chat
  */
 data class Chat(
-    @SerializedName("id") val id: Long,
-    @SerializedName("type") val type: String,
+    @SerializedName("id") val id: Long = 0,
+    @SerializedName("type") val type: String = "",
     @SerializedName("title") val title: String? = null,
     @SerializedName("username") val username: String? = null,
     @SerializedName("first_name") val firstName: String? = null,

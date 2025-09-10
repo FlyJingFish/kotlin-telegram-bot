@@ -6,9 +6,9 @@ import com.google.gson.annotations.SerializedName
  * Represents a Telegram user or bot.
  */
 data class User(
-    @SerializedName("id") val id: Long,
-    @SerializedName("is_bot") val isBot: Boolean,
-    @SerializedName("first_name") val firstName: String,
+    @SerializedName("id") val id: Long = 0,
+    @SerializedName("is_bot") val isBot: Boolean = false,
+    @SerializedName("first_name") val firstName: String = "",
     @SerializedName("last_name") val lastName: String? = null,
     @SerializedName("username") val username: String? = null,
     @SerializedName("language_code") val languageCode: String? = null,

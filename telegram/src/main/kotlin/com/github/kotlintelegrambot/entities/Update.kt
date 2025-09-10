@@ -9,7 +9,7 @@ import com.github.kotlintelegrambot.types.DispatchableObject
 import com.google.gson.annotations.SerializedName as Name
 
 data class Update constructor(
-    @Name("update_id") val updateId: Long,
+    @Name("update_id") val updateId: Long = 0,
     val message: Message? = null,
     @Name("edited_message") val editedMessage: Message? = null,
     @Name("channel_post") val channelPost: Message? = null,
