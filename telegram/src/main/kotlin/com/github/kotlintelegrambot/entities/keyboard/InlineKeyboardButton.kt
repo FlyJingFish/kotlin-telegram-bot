@@ -6,15 +6,15 @@ import com.google.gson.annotations.SerializedName
 /**
  * Contains information about a Web App.
  */
-data class WebAppInfo(val url: String)
+data class WebAppInfo(val url: String= "")
 
 /**
  * Contains information about a Login Url.
  */
 data class LoginUrl(
-    val url: String,
-    @SerializedName("forward_text") val forwardText: String?,
-    @SerializedName("bot_username") val botUsername: String?,
+    val url: String = "",
+    @SerializedName("forward_text") val forwardText: String?=null,
+    @SerializedName("bot_username") val botUsername: String?=null,
     @SerializedName("request_write_access") val requestWriteAccess: Boolean? = false,
 )
 
@@ -29,16 +29,16 @@ sealed class InlineKeyboardButton {
      * HTTP or tg:// url to be opened when button is pressed.
      */
     data class Url(
-        override val text: String,
-        val url: String,
+        override val text: String= "",
+        val url: String= "",
     ) : InlineKeyboardButton()
 
     /**
      * Data to be sent in a callback query to the bot when button is pressed (1-64 bytes).
      */
     data class CallbackData(
-        override val text: String,
-        @SerializedName("callback_data") val callbackData: String,
+        override val text: String= "",
+        @SerializedName("callback_data") val callbackData: String= "",
     ) : InlineKeyboardButton()
 
     /**
@@ -47,8 +47,8 @@ sealed class InlineKeyboardButton {
      * in which case just the bot's username will be inserted.
      */
     data class SwitchInlineQuery(
-        override val text: String,
-        @SerializedName("switch_inline_query") val switchInlineQuery: String,
+        override val text: String= "",
+        @SerializedName("switch_inline_query") val switchInlineQuery: String= "",
     ) : InlineKeyboardButton()
 
     /**
@@ -57,8 +57,8 @@ sealed class InlineKeyboardButton {
      * inserted.
      */
     data class SwitchInlineQueryCurrentChat(
-        override val text: String,
-        @SerializedName("switch_inline_query_current_chat") val switchInlineQueryCurrentChat: String,
+        override val text: String= "",
+        @SerializedName("switch_inline_query_current_chat") val switchInlineQueryCurrentChat: String= "",
     ) : InlineKeyboardButton()
 
     /**
@@ -66,15 +66,15 @@ sealed class InlineKeyboardButton {
      * NOTE: this type of button must always be the first button in the first row.
      */
     data class CallbackGameButtonType(
-        override val text: String,
-        @SerializedName("callback_game") val callbackGame: CallbackGame?,
+        override val text: String= "",
+        @SerializedName("callback_game") val callbackGame: CallbackGame?=null,
     ) : InlineKeyboardButton()
 
     /**
      * To send a pay button.
      * NOTE: this type of button must always be the first button in the first row.
      */
-    data class Pay(override val text: String) : InlineKeyboardButton() {
+    data class Pay(override val text: String= "") : InlineKeyboardButton() {
         val pay = true
     }
 
@@ -82,15 +82,15 @@ sealed class InlineKeyboardButton {
      * To send a web app.
      */
     data class WebApp(
-        override val text: String,
-        @SerializedName("web_app") val webApp: WebAppInfo,
+        override val text: String= "",
+        @SerializedName("web_app") val webApp: WebAppInfo = WebAppInfo(),
     ) : InlineKeyboardButton()
 
     /**
      * To send a login url.
      */
     data class LoginUrlButtonType(
-        override val text: String,
-        @SerializedName("login_url") val loginUrl: LoginUrl,
+        override val text: String = "",
+        @SerializedName("login_url") val loginUrl: LoginUrl = LoginUrl(),
     ) : InlineKeyboardButton()
 }

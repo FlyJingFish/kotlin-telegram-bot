@@ -7,9 +7,9 @@ import com.google.gson.annotations.SerializedName
  * https://core.telegram.org/bots/api#photosize
  */
 data class PhotoSize(
-    @SerializedName(FilesFields.fileId) val fileId: String,
-    @SerializedName(FilesFields.fileUniqueId) val fileUniqueId: String,
-    @SerializedName(FilesFields.width) val width: Int,
-    @SerializedName(FilesFields.height) val height: Int,
+    @SerializedName(FilesFields.fileId) val fileId: String = "",
+    @SerializedName(FilesFields.fileUniqueId) val fileUniqueId: String = "",
+    @SerializedName(FilesFields.width) val width: Int = 0,
+    @SerializedName(FilesFields.height) val height: Int = 0,
     @SerializedName(FilesFields.fileSize) val fileSize: Int? = null,
 )

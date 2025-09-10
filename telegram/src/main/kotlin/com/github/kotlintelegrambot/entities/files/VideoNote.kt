@@ -7,10 +7,10 @@ import com.google.gson.annotations.SerializedName
  * https://core.telegram.org/bots/api#videonote
  */
 data class VideoNote(
-    @SerializedName(FilesFields.fileId) val fileId: String,
-    @SerializedName(FilesFields.fileUniqueId) val fileUniqueId: String,
-    @SerializedName(FilesFields.length) val length: Int,
-    @SerializedName(FilesFields.duration) val duration: Int,
+    @SerializedName(FilesFields.fileId) val fileId: String = "",
+    @SerializedName(FilesFields.fileUniqueId) val fileUniqueId: String = "",
+    @SerializedName(FilesFields.length) val length: Int = 0,
+    @SerializedName(FilesFields.duration) val duration: Int = 0,
     @SerializedName(FilesFields.thumb) val thumb: PhotoSize? = null,
     @SerializedName(FilesFields.fileSize) val fileSize: Int? = null,
 )
