@@ -23,7 +23,7 @@ import java.lang.reflect.Type
 internal class InlineKeyboardButtonAdapter : JsonSerializer<InlineKeyboardButton>, JsonDeserializer<InlineKeyboardButton> {
 
     private class InlineKeyboardButtonDto(
-        val text: String,
+        val text: String = "",
         val url: String? = null,
         @SerializedName("callback_data") val callbackData: String? = null,
         @SerializedName("callback_game") val callbackGame: CallbackGame? = null,
